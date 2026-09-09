@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Years with Heidi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #F6EFE9;
+    --plum: #3B2C36;
+    --moss: #7C8B66;
+    --gold: #C9A05B;
+    --rose: #E7C9BE;
+    --white: #FFFDFB;
+  }
+
+  *{ box-sizing:border-box; }
+
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--plum);
+    font-family:'Work Sans', sans-serif;
+    font-weight:300;
+    line-height:1.6;
+  }
+
+  .wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:0 28px 120px;
+  }
+
+  /* HERO */
+  .hero{
+    padding:90px 0 60px;
+    text-align:center;
+  }
+
+  .hero .years{
+    font-family:'Fraunces', serif;
+    font-size:clamp(90px, 28vw, 160px);
+    font-weight:500;
+    line-height:0.85;
+    letter-spacing:-0.02em;
+    color:var(--plum);
+    animation: riseIn 1s cubic-bezier(.2,.7,.3,1) both;
+  }
+
+  .hero .sub{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:22px;
+    color:var(--moss);
+    margin-top:6px;
+    animation: riseIn 1s cubic-bezier(.2,.7,.3,1) .15s both;
+  }
+
+  .hero .names{
+    margin-top:34px;
+    font-size:15px;
+    color:var(--plum);
+    opacity:0.65;
+    animation: riseIn 1s cubic-bezier(.2,.7,.3,1) .3s both;
+  }
+
+  .hero .names span{
+    color:var(--gold);
+    font-weight:500;
+  }
+
+  @keyframes riseIn{
+    from{ opacity:0; transform:translateY(16px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  hr.div{
+    border:none;
+    border-top:1px solid rgba(59,44,54,0.15);
+    width:64px;
+    margin:0 auto;
+  }
+
+  /* SECTION LABEL */
+  .section-title{
+    font-family:'Fraunces', serif;
+    font-size:26px;
+    text-align:center;
+    margin:70px 0 8px;
+  }
+
+  /* GALLERY */
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+
+  .photo-slot{
+    position:relative;
+    aspect-ratio:1/1;
+    border-radius:6px;
+    overflow:hidden;
+    background:var(--white);
+    cursor:pointer;
+  }
+  .photo-slot img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform 0.5s ease;
+  }
+  .photo-slot:hover img{
+    transform:scale(1.06);
+  }
+
+  /* caption overlay */
+  .photo-slot .caption{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:flex-end;
+    padding:16px;
+    background:linear-gradient(to top, rgba(59,44,54,0.75) 0%, rgba(59,44,54,0.15) 55%, rgba(59,44,54,0) 100%);
+    opacity:0;
+    transition:opacity 0.35s ease;
+  }
+  .photo-slot:hover .caption{
+    opacity:1;
+  }
+  .photo-slot .caption span{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:15px;
+    color:var(--white);
+    line-height:1.35;
+  }
+
+  @media (hover:none){
+    /* on touch devices, show caption on tap/focus instead of hover-only */
+    .photo-slot:active .caption,
+    .photo-slot:focus .caption{
+      opacity:1;
+    }
+  }
+
+  /* LETTER */
+  .letter{
+    margin-top:70px;
+    background:var(--white);
+    border-radius:4px;
+    padding:44px 38px;
+    box-shadow:0 1px 0 rgba(59,44,54,0.06);
+    position:relative;
+  }
+  .letter::before{
+    content:"";
+    position:absolute;
+    top:0; left:38px; right:38px;
+    height:3px;
+    background:var(--rose);
+  }
+  .letter .to{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:20px;
+    color:var(--moss);
+    margin-bottom:22px;
+  }
+  .letter .body{
+    font-size:16px;
+    color:var(--plum);
+  }
+  .letter .body p{ margin:0 0 16px; }
+  .letter .body p:last-child{ margin-bottom:0; }
+  .letter .sign{
+    margin-top:26px;
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    text-align:right;
+    color:var(--plum);
+  }
+
+  footer{
+    text-align:center;
+    margin-top:80px;
+    font-size:13px;
+    color:var(--plum);
+    opacity:0.4;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .hero .years, .hero .sub, .hero .names{ animation:none; }
+    .photo-slot:hover img{ transform:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="years">3</div>
+    <div class="sub">years of us</div>
+    <div class="names">happy anniversary</div>
+  </div>
+
+  <hr class="div">
+
+  <div class="section-title">a few of my favorites</div>
+
+  <!--
+    HOW TO ADD YOUR PHOTOS:
+    1. Put your photo files in the same folder as this HTML file
+       (for example: photo1.jpg, photo2.jpg, etc.)
+    2. Replace each src="photo1.jpg" below with your actual filename.
+    3. If you have fewer than 6 photos, delete the extra
+       <div class="photo-slot">...</div> blocks.
+
+    HOW TO EDIT CAPTIONS:
+    Each photo now has a <span> inside .caption with placeholder text.
+    Just change the words inside each <span>...</span> to whatever
+    you want to appear when someone hovers over that photo.
+  -->
+  <div class="gallery" id="gallery">
+    <div class="photo-slot" tabindex="0">
+      <img src="6075578639077983194.jpg" alt="">
+      <div class="caption"><span>My two fav thing in the world</span></div>
+    </div>
+    <div class="photo-slot" tabindex="0">
+      <img src="teddy me and bb.jpg" alt="">
+      <div class="caption"><span>I just love this picture kasi super cute natin hehe</span></div>
+    </div>
+    <div class="photo-slot" tabindex="0">
+      <img src="6327877756918023171.jpg" alt="">
+      <div class="caption"><span>First fam tripp na kasama kaaa</span></div>
+    </div>
+    <div class="photo-slot" tabindex="0">
+      <img src="6264728900009576239.jpg" alt="">
+      <div class="caption"><span>Super kitang naa-appreciate heheh mwaa</span></div>
+    </div>
+    <div class="photo-slot" tabindex="0">
+      <img src="6285311233695530592.jpg" alt="">
+      <div class="caption"><span>proud of u alwaysss. college graduation next</span></div>
+    </div>
+    <div class="photo-slot" tabindex="0">
+      <img src="photobooth.jpg" alt="">
+      <div class="caption"><span>photobooth kahit wala nang pera HAHHAHA</span></div>
+    </div>
+  </div>
+
+  <div class="letter">
+    <div class="to">My love,</div>
+    <div class="body" id="loveNote">
+       <p>Happy 3rd anniversary.</p>
+
+      <p>Parang nasabi ko na ata lahat ng matatamis na salita so I think, I'll just make a poem 25 minute before our anniversary. Don't judge, okay? I am not magaling hehe. I'll just try.</p>
+
+      <p>Aking sinta, <br>
+          Alam mo ba na sa pag dilat ng aking mata,<br>
+          Mukha mo ang unang naaalala. <br>
+          Ikaw na minamahal, iniirog, at laman ng bawat gunita. 
+      </p>
+
+      <p>Irog, ang puso ko ay parang dinudurog, <br>
+          Pag ika'y naisip na mawala. <br>
+          Parang ako ay mawawala sa hulog, <br>
+          Pag ako at ang ala-ala ay sinunog
+      </p>
+
+      <p>Kaya giliw, <br>
+          Wag kang bibitiw, <br>
+          Dahil habang buhay kitang mamahalin, <br>
+          Sa hirap, ginhawa, at sa mga oras na nabibitin, <br>
+          Ang mga salitang lumalabas sa aking bibig. 
+        </p>
+
+        <p>Yan lang kaya ko sa ngayon huhu. LOVE UUUUU</p>
+    </div>
+    <div class="sign">— luke</div>
+  </div>
+  <footer>made with love, for our third year together</footer>
+
+</div>
+
+</body>
+</html>
